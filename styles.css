@@ -72,6 +72,34 @@ body {
     opacity: 0; 
 }
 
+
+.innerText span {
+    display: inline-block;
+    animation: riseUp 1.5s ease forwards;
+    opacity: 0;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.innerText span::after {
+    content: attr(data-original-content);
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-text-stroke: 4px rgba(255, 255, 255, 0.3); 
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.innerText span:hover::after {
+    opacity: 1;
+}
+
+
+
+
+
 /* Animations */
 @keyframes popOut {
     0% {
